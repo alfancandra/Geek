@@ -76,7 +76,8 @@ class DatacetakController extends Controller
         $request->validate([
             'nama' => 'required',
             'gambar' =>  'required',
-            'gambar.*' => 'mimes:jpeg,jpg,png,gif'
+            'gambar.*' => 'mimes:jpeg,jpg,png,gif',
+            'ukuran' => 'required',
         ]);
 
         if($request->hasfile('gambar')) {
@@ -90,7 +91,8 @@ class DatacetakController extends Controller
             $file= new Datacetak();
             $file->nama = $request->nama;
             $file->gambar=json_encode($data);
-            
+            $file->ukuran = $request->ukuran;
+            $file->deskripsi = $request->deskripsi;
            
             $file->save();
            return redirect()->route('datacetak.index')

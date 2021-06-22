@@ -267,6 +267,11 @@ return [
             ],
         ],
         [
+            'text'        => 'Data Bingkai',
+            'url'         => '/home/databingkai',
+            'icon'        => 'fas fa-fw fa-table',
+        ],
+        [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',

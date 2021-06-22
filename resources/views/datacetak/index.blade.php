@@ -22,6 +22,8 @@
             <th width="20px" class="text-center">No</th>
             <th>nama</th>
             <th>gambar</th>
+            <th width="80px">Ukuran</th>
+            <th>Deskripsi</th>
             <th width="120px">Tanggal Upload</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
@@ -31,6 +33,8 @@
             <td>{{ $cetak->nama }}</td>
             <td><?php foreach (json_decode($cetak->gambar) as $gambar) { ?>
             <a href="{{url('uploads/'.$gambar)}}"><img src="{{url('uploads/'.$gambar)}}" width="150px" alt="{{$gambar}}"> <?php } ?></a></td>
+            <td class="text-center">{{ $cetak->ukuran }}</td>
+            <td class="text-center">{{ $cetak->deskripsi }}</td>
             <td class="text-center">{{ $cetak->created_at }}</td>
             <td class="text-center">
                 

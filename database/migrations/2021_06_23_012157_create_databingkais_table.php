@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDatacetaksTable extends Migration
+class CreateDatabingkaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateDatacetaksTable extends Migration
      */
     public function up()
     {
-        Schema::create('datacetaks', function (Blueprint $table) {
+        Schema::create('databingkais', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->text('gambar');
+            $table->string('jenis');
             $table->string('ukuran');
-            $table->text('deskripsi');
+            $table->string('harga_beli');
+            $table->string('harga_jual');
+            $table->integer('stock');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateDatacetaksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datacetaks');
+        Schema::dropIfExists('databingkais');
     }
 }

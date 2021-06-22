@@ -10,7 +10,7 @@
 <div class="row mt-2 mb-2">
     <div class="col-lg-12 margin-tb">
         <div class="float-left">
-            <h2>Tambah Cetakan</h2>
+            <h2>Tambah Bingkai</h2>
         </div>
         <div class="float-right">
             <a class="btn btn-secondary" href="{{ route('datacetak.index') }}"> Back</a>
@@ -29,20 +29,20 @@
     </div>
 @endif
  
-<form action="{{ route('datacetak.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('databingkai.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
  
      <div class="row">
         <div class="col-sm-4 col-sm-12 col-sm-12">
             <div class="form-group">
-                <strong>Nama Pelanggan:</strong>
+                <strong>Nama Bingkai:</strong>
                 <input type="text" name="nama" class="form-control" placeholder="Nama">
             </div>
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12">
             <div class="form-group">
-                <strong>Gambar:</strong>
-                <input type="file" name="gambar[]" multiple="multiple" class="form-control" placeholder="Gambar">
+                <strong>Jenis Bingkai:</strong>
+                <input type="text" name="jenis" class="form-control" placeholder="Jenis Bingkai">
             </div>
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12">
@@ -63,8 +63,20 @@
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12">
             <div class="form-group">
-                <strong>Deskripsi Tambahan:</strong>
-                <textarea class="form-control" name="deskripsi"></textarea>
+                <strong>Harga Beli:</strong>
+                <input type="number" name="harga_beli" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-12 col-sm-12">
+            <div class="form-group">
+                <strong>Harga Jual:</strong>
+                <input type="number" name="harga_jual" class="form-control">
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-12 col-sm-12">
+            <div class="form-group">
+                <strong>Stock:</strong>
+                <input type="number" name="stock" class="form-control">
             </div>
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12 text-center">

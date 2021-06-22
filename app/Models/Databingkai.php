@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Datacetak extends Model
+class Databingkai extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nama',
-        'gambar',
+        'jenis',
         'ukuran',
-        'deskripsi',
-        'sudah',
+        'harga_beli',
+        'harga_jual',
+        'stock',
     ];
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DatacetakController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\DatacetakController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,5 +26,9 @@ Route::get('/home/datacetak', [App\Http\Controllers\DatacetakController::class, 
 Route::post('/home/datacetak/store', [DatacetakController::class, 'store'])->name('datacetak');
 
 Route::get('/home/datacetak/sudahcetak', [App\Http\Controllers\DatacetakController::class, 'sudahcetak'])->name('datacetak');
+Route::get('/home/datacetak/delete/{id}',[App\Http\Controllers\DatacetakController::class, 'destroy'])->name('datacetak/delete');
+
+Route::patch('/home/datacetak/{tercetak}', [App\Http\Controllers\DatacetakController::class, 'tercetak'])->name('tercetak');
+Route::patch('/home/datacetak/sudahcetak/{back}', [App\Http\Controllers\DatacetakController::class, 'back'])->name('sudahcetak/back');
 
 Route::resource('/home/datacetak', DatacetakController::class);

@@ -38,6 +38,33 @@ class DatacetakController extends Controller
         return view('datacetak.create');
     }
 
+    public function tercetak(Request $request,$cetak)
+    {
+        $page = Datacetak::find($cetak);
+
+        // Make sure you've got the Page model
+        if($page) {
+            $page->sudah = '1';
+            $page->save();
+        }
+
+        return redirect()->route('datacetak.index')
+        ->with('success','Post Update Success');
+    }
+    public function back(Request $request,$cetak)
+    {
+        $page = Datacetak::find($cetak);
+
+        // Make sure you've got the Page model
+        if($page) {
+            $page->sudah = '0';
+            $page->save();
+        }
+
+        return redirect()->route('datacetak.index')
+        ->with('success','Post Update Success');
+    }
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -49,12 +76,13 @@ class DatacetakController extends Controller
         $request->validate([
             'nama' => 'required',
             'gambar' =>  'required',
+            'gambar.*' => 'mimes:jpeg,jpg,png,gif'
         ]);
 
         if($request->hasfile('gambar')) {
             foreach($request->file('gambar') as $file)
             {
-                $name = $file->getClientOriginalName();
+                $name = uniqid() . '_' . time(). '.' .$file->getClientOriginalName();
                 $file->move(public_path().'/uploads/', $name);  
                 $data[] = $name;  
             }

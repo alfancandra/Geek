@@ -122,9 +122,9 @@ class DatacetakController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Datacetak $datacetak)
     {
-        //
+        return view('datacetak.edit',compact('datacetak'));
     }
 
     /**
@@ -134,9 +134,15 @@ class DatacetakController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Datacetak $datacetak)
     {
-        //
+        $request->validate(['nama' => 'required',
+            ]);
+
+        $datacetak->update($request->all());
+
+        return redirect()->route('datacetak.index')
+        ->with('success','Post Update Success');
     }
 
     /**

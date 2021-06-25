@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Data Cetak')
+@section('title', 'Data Bingkai')
 
 @section('content_header')
     <h1></h1>
@@ -10,7 +10,7 @@
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
-                <h2>Edit Cetak</h2>
+                <h2>Edit Bingkai</h2>
             </div>
             <div class="float-right">
                 <a class="btn btn-secondary" href="{{ route('datacetak.index') }}"> Back</a>
@@ -29,23 +29,21 @@
         </div>
     @endif
  
-    <form action="{{ route('datacetak.update',$datacetak->id) }}" method="POST">
+    <form action="{{ route('databingkai.update',$databingkai->id) }}" method="POST">
         @csrf
         @method('PUT')
  
          <div class="row">
             <div class="col-sm-4 col-sm-12 col-sm-12">
                 <div class="form-group">
-                    <strong>Nama Pelanggan:</strong>
-                    <input type="text" name="nama" value="{{ $datacetak->nama }}" class="form-control" placeholder="Nama">
+                    <strong>Nama Bingkai:</strong>
+                    <input type="text" name="nama" value="{{ $databingkai->nama }}" class="form-control" placeholder="Nama">
                 </div>
             </div>
             <div class="col-sm-4 col-sm-12 col-sm-12">
                 <div class="form-group">
-                    <strong>Gambar:</strong><br>
-                    <?php foreach (json_decode($datacetak->gambar) as $gambar) { ?>
-                        <a href="{{url('uploads/'.$gambar)}}"><img src="{{url('uploads/'.$gambar)}}" width="150px" alt="{{$gambar}}"></a>
-                    <?php } ?>
+                    <strong>Jenis Bingkai:</strong>
+                    <input type="text" name="jenis" value="{{ $databingkai->jenis }}" class="form-control" placeholder="Nama">
                 </div>
             </div>
             <div class="col-sm-4 col-sm-12 col-sm-12">
@@ -66,8 +64,20 @@
             </div>
             <div class="col-sm-4 col-sm-12 col-sm-12">
                 <div class="form-group">
-                    <strong>Deskripsi Tambahan:</strong>
-                    <textarea class="form-control" name="deskripsi">{{ $datacetak->deskripsi}}</textarea>
+                    <strong>Harga Beli:</strong>
+                    <input type="number" name="harga_beli" value="{{ $databingkai->harga_beli }}" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-12 col-sm-12">
+                <div class="form-group">
+                    <strong>Harga Jual:</strong>
+                    <input type="number" name="harga_jual" value="{{ $databingkai->harga_jual }}" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-12 col-sm-12">
+                <div class="form-group">
+                    <strong>Stock:</strong>
+                    <input type="number" name="stock" value="{{ $databingkai->stock }}" class="form-control">
                 </div>
             </div>
             <div class="col-sm-4 col-sm-12 col-sm-12 text-center">

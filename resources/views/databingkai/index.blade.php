@@ -40,8 +40,8 @@
             <td class="text-center">{{ $bingkai->stock }}</td>
             <td class="text-center">{{ $bingkai->created_at }}</td>
             <td class="text-center">
-                	<a class="btn btn-primary btn-md" href="{{ route('datacetak.edit',$bingkai->id) }}">Edit</a> | 
-    				<a class="btn btn-danger btn-md" href="{{ route('datacetak/delete',$bingkai->id) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>  
+                	<a class="btn btn-primary btn-md" href="{{ route('databingkai.edit',$bingkai->id) }}">Edit</a> | 
+    				<a class="btn btn-danger btn-md" href="{{ route('databingkai/delete',$bingkai->id) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>  
             </td>
         </tr>
         @endforeach

@@ -29,7 +29,7 @@ Route::get('/home/databingkai', [App\Http\Controllers\DatabingkaiController::cla
 // FORM
 Route::post('/home/datacetak/store', [DatacetakController::class, 'store'])->name('datacetak');
 Route::post('/home/databingkai/store', [DatabingkaiController::class, 'store'])->name('databingkai');
-
+Route::get('/home/databingkai/delete/{id}',[App\Http\Controllers\DatabingkaiController::class, 'destroy'])->name('databingkai/delete');
 
 Route::get('/home/datacetak/sudahcetak', [App\Http\Controllers\DatacetakController::class, 'sudahcetak'])->name('datacetak');
 Route::get('/home/datacetak/delete/{id}',[App\Http\Controllers\DatacetakController::class, 'destroy'])->name('datacetak/delete');

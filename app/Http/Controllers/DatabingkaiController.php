@@ -74,9 +74,9 @@ class DatabingkaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Databingkai $databingkai)
     {
-        //
+        return view('databingkai.edit',compact('databingkai'));
     }
 
     /**
@@ -86,9 +86,20 @@ class DatabingkaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Databingkai $databingkai)
     {
-        //
+        $request->validate(['nama' => 'required',
+            'jenis' => 'required',
+            'ukuran' => 'required',
+            'harga_beli' => 'required',
+            'harga_jual' => 'required',
+            'stock' => 'required',
+            ]);
+
+        $databingkai->update($request->all());
+
+        return redirect()->route('databingkai.index')
+        ->with('success','Bingkai Update Success');
     }
 
     /**
@@ -99,6 +110,10 @@ class DatabingkaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bingkai = databingkai::find($id);
+        $bingkai->delete();
+  
+        return redirect()->route('databingkai.index')
+                        ->with('success','Bingkai deleted successfully');
     }
 }

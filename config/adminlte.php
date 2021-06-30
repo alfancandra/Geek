@@ -251,7 +251,28 @@ return [
             'url'         => '/home',
             'label_color' => 'success',
         ],
+        ['header' => 'PENDAFTARAN'],
+        [
+            'text'        => 'Daftar Foto Studio',
+            'url'         => 'home/daftarfoto',
+            'icon'        => 'fas fa-fw fa-camera',
+            'label_color' => 'success',
+        ],
         ['header' => 'DATA'],
+        [
+            'text'        => 'Foto Studio',
+            'icon'        => 'fas fa-fw fa-camera',
+            'submenu' => [
+                [
+                    'text' => 'Data Foto Studio',
+                    'url'  => '/home/datafotostudio',
+                ],
+                [
+                    'text' => 'Data Paket Foto',
+                    'url'  => 'home/datacetak/sudahcetak',
+                ],
+            ],
+        ],
         [
             'text' => 'Data Cetak Foto',
             'icon' => 'fas fa-fw fa-table',

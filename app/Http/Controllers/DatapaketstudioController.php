@@ -26,7 +26,7 @@ class DatapaketstudioController extends Controller
      */
     public function create()
     {
-        //
+        return view('datapaketstudio.create');
     }
 
     /**
@@ -37,7 +37,19 @@ class DatapaketstudioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_paket' => 'required',
+            'harga' => 'required',
+            'orang' => 'required'
+        ]);
+         
+        /// insert setiap request dari form ke dalam database via model
+        /// jika menggunakan metode ini, maka nama field dan nama form harus sama
+        DatapaketStudio::create($request->all());
+         
+        /// redirect jika sukses menyimpan data
+        return redirect()->route('datapaketstudio.index')
+                        ->with('success','created successfully.');
     }
 
     /**

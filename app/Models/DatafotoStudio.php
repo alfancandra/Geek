@@ -14,6 +14,6 @@ class DatafotoStudio extends Model
         'alamat',
         'telp',
         'paket',
-        'total',
+        'orang',
     ];
 }

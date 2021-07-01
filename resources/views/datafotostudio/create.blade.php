@@ -48,23 +48,23 @@
         <div class="col-sm-4 col-sm-12 col-sm-12">
             <div class="form-group">
                 <strong>Nomor Telp:</strong>
-                <input type="number" name="telp" class="form-control" placeholder="Nama">
+                <input type="number" name="telp" class="form-control" placeholder="Nomor telp">
             </div>
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12">
             <div class="form-group">
                 <strong>Paket:</strong>
                 <select class="form-control" name="paket">
-                    <option value="2R">2R</option>
-                    <option value="3R">3R</option>
-                    <option value="4R">4R</option>
-                    <option value="5R">5R</option>
-                    <option value="8R">8R</option>
-                    <option value="10R">10R</option>
-                    <option value="12R">12R</option>
-                    <option value="16R">16R</option>
-                    <option value="20R">20R</option>
+                @foreach ($datapaket as $data)
+                    <option value="{{ $data->id }}">{{ $data->nama_paket }}</option>
+                @endforeach
                 </select>
+            </div>
+        </div>
+        <div class="col-sm-4 col-sm-12 col-sm-12">
+            <div class="form-group">
+                <strong>Jumlah Orang:</strong>
+                <input type="number" name="orang" class="form-control" placeholder="Jumlah orang">
             </div>
         </div>
         <div class="col-sm-4 col-sm-12 col-sm-12 text-center">

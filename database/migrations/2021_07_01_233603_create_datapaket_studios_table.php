@@ -15,8 +15,8 @@ class CreateDatapaketStudiosTable extends Migration
     {
         Schema::create('datapaket_studios', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->int('harga');
+            $table->string('nama_paket');
+            $table->integer('harga');
             $table->string('orang');
             $table->timestamps();
         });

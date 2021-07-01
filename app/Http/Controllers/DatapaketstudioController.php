@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DatapaketStudio;
 
 class DatapaketstudioController extends Controller
 {
@@ -13,7 +14,9 @@ class DatapaketstudioController extends Controller
      */
     public function index()
     {
-        //
+        $datapaket = DatapaketStudio::latest()->paginate(5);
+        return view('datapaketstudio.index',compact('datapaket'))
+            ->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**

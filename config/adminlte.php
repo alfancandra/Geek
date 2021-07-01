@@ -269,7 +269,7 @@ return [
                 ],
                 [
                     'text' => 'Data Paket Foto',
-                    'url'  => 'home/datacetak/sudahcetak',
+                    'url'  => 'home/datapaketstudio',
                 ],
             ],
         ],

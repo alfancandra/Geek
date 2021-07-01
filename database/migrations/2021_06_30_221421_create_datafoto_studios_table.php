@@ -18,8 +18,8 @@ class CreateDatafotoStudiosTable extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('telp');
-            $table->string('paket');
-            $table->integer('total');
+            $table->integer('paket');
+            $table->string('orang');
             $table->timestamps();
         });
     }

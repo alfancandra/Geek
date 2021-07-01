@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DatafotoStudio;
+use App\Models\DatapaketStudio;
 
 class DatafotoStudioController extends Controller
 {
@@ -14,7 +15,8 @@ class DatafotoStudioController extends Controller
      */
     public function index()
     {
-        $datafoto = DatafotoStudio::latest()->paginate(5);
+        $datafoto = DatafotoStudio::join('datapaket_studios','datafoto_studios.paket','=','datapaket_studios.id')
+        ->select(['datafoto_studios.*','datapaket_studios.*'])->get();
 
         return view('datafotostudio.index',compact('datafoto'))
             ->with('i',(request()->input('page',1)-1)*5);
@@ -27,7 +29,8 @@ class DatafotoStudioController extends Controller
      */
     public function create()
     {
-        return view('datafotostudio.create');
+        $datapaket = DatapaketStudio::latest()->paginate(5);
+        return view('datafotostudio.create',compact('datapaket'));
     }
 
     /**
@@ -43,6 +46,7 @@ class DatafotoStudioController extends Controller
             'alamat' => 'required',
             'telp' => 'required',
             'paket' => 'required',
+            'orang' => 'required',
         ]);
          
         /// insert setiap request dari form ke dalam database via model

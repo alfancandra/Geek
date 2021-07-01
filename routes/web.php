@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatacetakController;
 use App\Http\Controllers\DatabingkaiController;
 use App\Http\Controllers\DatafotoStudioController;
+use App\Http\Controllers\DatapaketstudioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,12 +27,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // URL MENU
 Route::get('/home/daftarfoto', [App\Http\Controllers\DatafotoStudioController::class, 'create'])->name('daftarfoto');
 Route::get('/home/datafotostudio', [App\Http\Controllers\DatafotoStudioController::class, 'index'])->name('datafotostudio');
+Route::get('/home/datapaketstudio', [DatapaketstudioController::class, 'index'])->name('datapaketstudio');
 Route::get('/home/datacetak', [App\Http\Controllers\DatacetakController::class, 'index'])->name('datacetak');
 Route::get('/home/databingkai', [App\Http\Controllers\DatabingkaiController::class, 'index'])->name('databingkai');
 
 // FORM
 Route::post('/home/datafotostudio/store', [DatafotoStudioController::class, 'store'])->name('datafotostudio');
 Route::get('/home/datafotostudio/delete/{id}',[App\Http\Controllers\DatafotoStudioController::class, 'destroy'])->name('datafotostudio/delete');
+
+Route::get('/home/datapaketstudio/delete/{id}',[App\Http\Controllers\DatapaketstudioController::class, 'destroy'])->name('datapaketstudio/delete');
 
 Route::post('/home/datacetak/store', [DatacetakController::class, 'store'])->name('datacetak');
 Route::post('/home/databingkai/store', [DatabingkaiController::class, 'store'])->name('databingkai');
@@ -45,5 +49,6 @@ Route::patch('/home/datacetak/sudahcetak/{back}', [App\Http\Controllers\Dataceta
 
 // Resource
 Route::resource('/home/datafotostudio', DatafotoStudioController::class);
+Route::resource('/home/datapaketstudio', DatapaketstudioController::class);
 Route::resource('/home/datacetak', DatacetakController::class);
 Route::resource('/home/databingkai', DatabingkaiController::class);

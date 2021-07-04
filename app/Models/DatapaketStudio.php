@@ -13,5 +13,6 @@ class DatapaketStudio extends Model
         'nama_paket',
         'harga',
         'orang',
+        'tambahan'
     ];
 }

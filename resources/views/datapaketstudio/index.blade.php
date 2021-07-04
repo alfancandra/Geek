@@ -23,6 +23,7 @@
             <th>Nama</th>
             <th>Harga</th>
             <th width="80px">Orang</th>
+            <th width="80px">Biaya Tambahan</th>
             <th width="120px">Tanggal</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
@@ -32,6 +33,7 @@
             <td>{{ $data->nama_paket }}</td>
             <td>{{ $data->harga }}</td>
             <td class="text-center">{{ $data->orang }}</td>
+            <td class="text-center">{{ $data->tambahan }}</td>
             <td class="text-center">{{ $data->created_at }}</td>
             <td class="text-center">
                 	<a class="btn btn-primary btn-md" href="{{ route('datapaketstudio.edit',$data->id) }}">Edit</a> | 

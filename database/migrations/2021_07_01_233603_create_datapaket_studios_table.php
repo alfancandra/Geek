@@ -18,6 +18,7 @@ class CreateDatapaketStudiosTable extends Migration
             $table->string('nama_paket');
             $table->integer('harga');
             $table->string('orang');
+            $table->integer('tambahan');
             $table->timestamps();
         });
     }

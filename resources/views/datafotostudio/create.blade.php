@@ -56,7 +56,7 @@
                 <strong>Paket:</strong>
                 <select class="form-control" name="paket">
                 @foreach ($datapaket as $data)
-                    <option value="{{ $data->id }}">{{ $data->nama_paket }}</option>
+                    <option value="{{ $data->id }}">{{ $data->nama_paket }} - {{ $data->harga }} - {{ $data->orang }} Orang</option>
                 @endforeach
                 </select>
             </div>

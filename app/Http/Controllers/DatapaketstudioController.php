@@ -40,7 +40,8 @@ class DatapaketstudioController extends Controller
         $request->validate([
             'nama_paket' => 'required',
             'harga' => 'required',
-            'orang' => 'required'
+            'orang' => 'required',
+            'tambahan' => 'required'
         ]);
          
         /// insert setiap request dari form ke dalam database via model

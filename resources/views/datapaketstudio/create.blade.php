@@ -51,6 +51,12 @@
                 <input type="number" name="orang" class="form-control" placeholder="Jumlah orang">
             </div>
         </div>
+        <div class="col-sm-4 col-sm-12 col-sm-12">
+            <div class="form-group">
+                <strong>Tambahan:</strong>
+                <input type="number" name="tambahan" class="form-control" placeholder="Harga tambahan untuk 1 orang">
+            </div>
+        </div>
         <div class="col-sm-4 col-sm-12 col-sm-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

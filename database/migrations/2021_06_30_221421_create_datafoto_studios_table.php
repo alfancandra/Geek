@@ -20,6 +20,7 @@ class CreateDatafotoStudiosTable extends Migration
             $table->string('telp');
             $table->integer('paket');
             $table->string('orang');
+            $table->integer('total');
             $table->timestamps();
         });
     }

@@ -25,6 +25,7 @@
             <th width="80px">Telp</th>
             <th width="120px">Paket</th>
             <th width="120px">Total</th>
+            <th width="120px">Orang</th>
             <th width="120px">Tanggal</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
@@ -35,7 +36,8 @@
             <td>{{ $data->alamat }}</td>
             <td class="text-center">{{ $data->telp }}</td>
             <td class="text-center">{{ $data->nama_paket }}</td>
-            <td>{{ $data->harga }}</td>
+            <td>{{ $data->total }}</td>
+            <td>{{ $data->orang }} Orang</td>
             <td class="text-center">{{ $data->created_at }}</td>
             <td class="text-center">
                 	<a class="btn btn-primary btn-md" href="{{ route('datafotostudio.edit',$data->id) }}">Edit</a> | 

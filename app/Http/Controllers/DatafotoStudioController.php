@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DatafotoStudio;
 use App\Models\DatapaketStudio;
+use Illuminate\Support\Facades\DB;
 
 class DatafotoStudioController extends Controller
 {
@@ -16,7 +17,7 @@ class DatafotoStudioController extends Controller
     public function index()
     {
         $datafoto = DatafotoStudio::join('datapaket_studios','datafoto_studios.paket','=','datapaket_studios.id')
-        ->select(['datafoto_studios.*','datapaket_studios.*'])->get();
+        ->select(['datafoto_studios.*','datapaket_studios.id','datapaket_studios.nama_paket','datapaket_studios.harga','datapaket_studios.orang As perorang','datapaket_studios.tambahan'])->get();
 
         return view('datafotostudio.index',compact('datafoto'))
             ->with('i',(request()->input('page',1)-1)*5);
@@ -51,7 +52,22 @@ class DatafotoStudioController extends Controller
          
         /// insert setiap request dari form ke dalam database via model
         /// jika menggunakan metode ini, maka nama field dan nama form harus sama
-        DatafotoStudio::create($request->all());
+        $idpaket = $request->paket;
+        $jmlorang = $request->orang;
+        $file = new DatafotoStudio();
+        $paket = DatapaketStudio::where('id',$idpaket)->first();
+        if ($jmlorang > $paket->perorang) {
+            $totalharga = $paket->harga+($paket->tambahan*($jmlorang-$paket->perorang));
+        }else{
+            $totalharga = $paket->harga;
+        }
+        $file->nama = $request->nama;
+        $file->alamat = $request->alamat;
+        $file->telp = $request->telp;
+        $file->paket = $request->paket;
+        $file->orang = $request->orang;
+        $file->total = $totalharga;
+        $file->save();
          
         /// redirect jika sukses menyimpan data
         return redirect()->route('datafotostudio.index')

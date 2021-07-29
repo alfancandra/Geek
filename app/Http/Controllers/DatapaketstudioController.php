@@ -70,9 +70,9 @@ class DatapaketstudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(DatapaketStudio $datapaketstudio)
     {
-        //
+        return view('datapaketstudio.edit',compact('datapaketstudio'));
     }
 
     /**
@@ -82,9 +82,19 @@ class DatapaketstudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,DatapaketStudio $datapaketstudio)
     {
-        //
+        $request->validate([
+            'nama_paket' => 'required',
+            'harga' => 'required',
+            'orang' => 'required',
+            'tambahan' => 'required'
+            ]);
+
+        $datapaketstudio->update($request->all());
+
+        return redirect()->route('datapaketstudio.index')
+        ->with('success','Post Update Success');
     }
 
     /**
@@ -95,6 +105,10 @@ class DatapaketstudioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = DatapaketStudio::find($id);
+        $post->delete();
+  
+        return redirect()->route('datapaketstudio.index')
+                        ->with('success','Post deleted successfully');
     }
 }

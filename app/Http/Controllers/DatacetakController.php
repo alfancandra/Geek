@@ -153,7 +153,7 @@ class DatacetakController extends Controller
      */
     public function destroy($id)
     {
-        $post = datacetak::find($id);
+        $post = DatapaketStudio::find($id);
         $post->delete();
   
         return redirect()->route('datacetak.index')

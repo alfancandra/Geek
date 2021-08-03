@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <p>Selamat Datang</p>
+    <p>Selamat Datang di Website Admin Geek</p>
 @stop
 
 @section('css')

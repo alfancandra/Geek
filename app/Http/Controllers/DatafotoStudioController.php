@@ -91,9 +91,9 @@ class DatafotoStudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(DatafotoStudio $datafotoStudi)
     {
-        //
+        return view('datafotostudio.edit',compact('datafotoStudi'));
     }
 
     /**
@@ -103,9 +103,9 @@ class DatafotoStudioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, DatafotoStudio $datafotoStudi)
     {
-        //
+        
     }
 
     /**

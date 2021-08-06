@@ -40,7 +40,6 @@
             <td>{{ $data->orang }} Orang</td>
             <td class="text-center">{{ $data->created_at }}</td>
             <td class="text-center">
-                	<a class="btn btn-primary btn-md" href="{{ route('datafotostudio.edit',$data->id) }}">Edit</a> | 
     				<a class="btn btn-danger btn-md" href="{{ route('datafotostudio/delete',$data->id) }}" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>  
             </td>
         </tr>

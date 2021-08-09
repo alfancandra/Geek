@@ -292,6 +292,35 @@ return [
             'url'         => '/home/databingkai',
             'icon'        => 'fas fa-fw fa-table',
         ],
+        ['header' => 'Data Sewa Alat'],
+        [
+            'text' => 'Data Sewa Kamera',
+            'icon' => 'fas fa-fw fa-table',
+            'submenu' => [
+                [
+                    'text' => 'Belum Dikembalikan',
+                    'url'  => 'home/datacetak',
+                ],
+                [
+                    'text' => 'Sudah Dikembalikan',
+                    'url'  => 'home/datacetak/sudahcetak',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Data Sewa Action Cam',
+            'icon' => 'fas fa-fw fa-table',
+            'submenu' => [
+                [
+                    'text' => 'Belum Dikembalikan',
+                    'url'  => 'home/datacetak',
+                ],
+                [
+                    'text' => 'Sudah Dikembalikan',
+                    'url'  => 'home/datacetak/sudahcetak',
+                ],
+            ],
+        ],
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',

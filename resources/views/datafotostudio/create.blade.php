@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Data Foto Studio')
+@section('title', 'Tambah Data Foto Studio')
 
 @section('content_header')
     <h1></h1>

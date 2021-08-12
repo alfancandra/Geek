@@ -260,20 +260,6 @@ return [
         ],
         ['header' => 'DATA'],
         [
-            'text'        => 'Foto Studio',
-            'icon'        => 'fas fa-fw fa-camera',
-            'submenu' => [
-                [
-                    'text' => 'Data Foto Studio',
-                    'url'  => '/home/datafotostudio',
-                ],
-                [
-                    'text' => 'Data Paket Foto',
-                    'url'  => 'home/datapaketstudio',
-                ],
-            ],
-        ],
-        [
             'text' => 'Data Cetak Foto',
             'icon' => 'fas fa-fw fa-table',
             'submenu' => [
@@ -292,35 +278,7 @@ return [
             'url'         => '/home/databingkai',
             'icon'        => 'fas fa-fw fa-table',
         ],
-        ['header' => 'Data Sewa Alat'],
-        [
-            'text' => 'Data Sewa Kamera',
-            'icon' => 'fas fa-fw fa-table',
-            'submenu' => [
-                [
-                    'text' => 'Belum Dikembalikan',
-                    'url'  => 'home/datacetak',
-                ],
-                [
-                    'text' => 'Sudah Dikembalikan',
-                    'url'  => 'home/datacetak/sudahcetak',
-                ],
-            ],
-        ],
-        [
-            'text' => 'Data Sewa Action Cam',
-            'icon' => 'fas fa-fw fa-table',
-            'submenu' => [
-                [
-                    'text' => 'Belum Dikembalikan',
-                    'url'  => 'home/datacetak',
-                ],
-                [
-                    'text' => 'Sudah Dikembalikan',
-                    'url'  => 'home/datacetak/sudahcetak',
-                ],
-            ],
-        ],
+        
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
